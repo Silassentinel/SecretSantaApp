@@ -1,4 +1,5 @@
 OAuthKeys.json
+token.json
 # Logs
 logs
 *.log
