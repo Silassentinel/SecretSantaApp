@@ -22,8 +22,7 @@ const SCOPES = [
     'https://www.googleapis.com/auth/gmail.send',
     'https://www.googleapis.com/auth/gmail.readonly'
 ];
-const TOKEN_DIR = __dirname;
-const TOKEN_PATH = TOKEN_DIR + '/gmail-nodejs-quickstart.json';
+const TOKEN_PATH = './token.json';
 
 const main = async () =>
 {
@@ -57,13 +56,13 @@ const main = async () =>
 
             oauth2Client.credentials = token;
 
-            try
-            {
-                fs.mkdirSync(TOKEN_DIR);
-            } catch (err: Error | any)
-            {
-                if (err.code != 'EEXIST') throw err;
-            }
+            // try
+            // {
+            //     fs.mkdirSync(TOKEN_DIR);
+            // } catch (err: Error | any)
+            // {
+            //     if (err.code != 'EEXIST') throw err;
+            // }
 
             await writeFileAsync(TOKEN_PATH, JSON.stringify(token));
             console.log('Token stored to ' + TOKEN_PATH);
