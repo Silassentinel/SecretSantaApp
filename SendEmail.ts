@@ -21,29 +21,19 @@ const SendEmail = async (recipient: string, subject: string, body: string) =>
 
 
     // create encoded email message
-
-        const encodedEmail = [
-        'Content-Type: text"\r\n',
-        'MIME-Version: 1.0\r\n',
-        `From: me\r\n`,
-        `To: ${recipient}\r\n`,
-        `Subject: ${subject}\r\n\r\n`,
-        'Content-Type: text/plain; charset="base64"\r\n',
-        'MIME-Version: 1.0\r\n',
-        'Content-Transfer-Encoding: base64\r\n\r\n',
-         `${body}\r\n\r\n`,]
+    const email = 'To:' + recipient + '\r\n' +'Subject:' + subject + '\r\n' +'Content-type:text/html;charset=utf-8\r\n' + '\r\n' +body;
 
     // create buffer from encoded email
-    const encodedEmailBuffer = new Buffer(encodedEmail.join(""),"base64")
+    const encodedEmailBuffer = Buffer.from(email,"utf-8").toString("base64");
 
 
     // send email via  the gmail API with encoded body
     google.options({ auth: oauth2Client });
 
-    await gmail.users.messages.send({
+    gmail.users.messages.send({
         userId: 'me',
         requestBody: {
-            raw: encodedEmailBuffer.toString('base64')
+            raw: encodedEmailBuffer
         }
     });
 
