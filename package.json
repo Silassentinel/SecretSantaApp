@@ -4,9 +4,9 @@
   "description": "",
   "main": "SecretSantaApp.js",
   "scripts": {
-    "build": "tsc -p .",
+    "build": "tsc -p ./src",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "run": ""
+    "run": "ts-node ./src/SecretSantaApp.ts -e -n"
   },
   "author": "",
   "license": "ISC",

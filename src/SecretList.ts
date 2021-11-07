@@ -1,4 +1,4 @@
-import Dictionary from "Dictionary";
+import Dictionary from "src/Dictionary";
 export default class SecretList extends Array<string>
 {
     private _list: Dictionary<string> = {};

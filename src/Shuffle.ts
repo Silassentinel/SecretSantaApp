@@ -1,9 +1,8 @@
 const  shuffle =(array : string []) => {
-    let currentIndex = array.length,  randomIndex;
-  
+    let currentIndex : number = array.length
+    let randomIndex : number= 0;
     // While there remain elements to shuffle...
     while (currentIndex != 0) {
-  
       // Pick a remaining element...
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex--;
@@ -12,7 +11,6 @@ const  shuffle =(array : string []) => {
       [array[currentIndex], array[randomIndex]] = [
         array[randomIndex], array[currentIndex]];
     }
-  
     return array;
   }
 
