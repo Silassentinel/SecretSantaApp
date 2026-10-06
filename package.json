@@ -11,11 +11,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@google-cloud/local-auth": "^1.0.1",
+    "@google-cloud/local-auth": "^3.0.1",
     "@types/yargs": "^17.0.5",
     "dotenv": "^10.0.0",
-    "google-auth-library": "^7.10.2",
-    "googleapis": "^89.0.0",
+    "google-auth-library": "^11.1.0",
+    "googleapis": "^183.0.0",
     "nodemailer": "^10.0.9",
     "yargs": "^17.2.1"
   },
